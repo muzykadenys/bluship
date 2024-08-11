@@ -1,0 +1,117 @@
+@import "../../settings/settings.scss";
+
+.NetworkSection_Wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: $head_padding;
+}
+
+.NetworkSection {
+  max-width: $max_width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px;
+  margin-bottom: 0;
+  background-image: radial-gradient(circle, #ff2da020 11%, #0b091c 100%),
+    url("../../../public/img/network.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .NetworkSection_Pin {
+    margin-top: 51px;
+    font-size: 21px;
+    font-weight: 600;
+    @include gd_rectangle(10px, 20px);
+  }
+
+  .NetworkSection_BigText {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: $white;
+  }
+
+  .NetworkSection_SmallText {
+    margin: 24px 0px 54px 0px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: $white;
+    width: 50%;
+  }
+
+  .NetworkSection_Back_Bottom {
+    margin-top: 70px;
+    padding: 20px 0px;
+    width: 100%;
+    height: 100px;
+    background-color: $bg_gd_2_2;
+    background-color: #0b091c;
+    box-shadow: 0px -60px 42px -28px $bg_gd_2_2;
+
+    overflow: hidden;
+
+    
+
+    .NetworkSection_Back_Bottom_Wrap {
+      display: flex;
+
+      .NetworkSection_Back_Bottom_Wrap_El {
+        margin-right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 333px;
+        border: 1px solid #1e1f35;
+        padding: 15px 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .NetworkSection {
+    margin: 100px $global_horozontal_padding_1440;
+    background-image: radial-gradient(circle, #ff2da024 2%, #0b091c91 100%),
+      url("../../../public/img/network.png");
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .NetworkSection {
+    background-image: radial-gradient(circle, #ff2da025 2%, #0b091c3e 100%),
+      url("../../../public/img/network.png");
+
+    .NetworkSection_SmallText {
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 758px) {
+  .NetworkSection {
+    margin: 10px $global_horozontal_padding_758;
+
+    .NetworkSection_BigText {
+      font-size: 42px;
+    }
+    .NetworkSection_SmallText {
+      width: 90%;
+      font-size: 18px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .NetworkSection {
+    .NetworkSection_BigText {
+      font-size: 32px;
+    }
+    .NetworkSection_SmallText {
+      width: 90%;
+      font-size: 14px;
+    }
+  }
+}

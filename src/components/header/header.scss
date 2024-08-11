@@ -1,0 +1,308 @@
+@import '../../settings/settings.scss';
+
+.HeaderSectionWrap {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 100;
+
+  .HeaderSection {
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: $max_width;
+    width: 100%;
+    margin: 20px 0px;
+
+    transition: margin 0.4s ease-in-out;
+
+    .HeaderSection_Logo {
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .HeaderSection_Logo_Icon {
+        margin-top: 3px;
+      }
+    }
+
+    .HeaderSection_Navigation {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+
+      .HeaderSection_Navigation_El {
+        text-decoration: none;
+        color: $white;
+        font-size: 16px;
+        font-weight: 600;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: #16baff;
+        }
+      }
+    }
+
+    // mobile menu button
+    .HeaderSection_Book {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .HeaderSection_Book_Menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        justify-content: center;
+        border: 1px solid $white;
+        width: 49px;
+        height: 49px;
+        display: none;
+        cursor: pointer;
+
+        .HeaderSection_Book_Menu_el {
+          background-color: $white;
+          width: 15px;
+          height: 2px;
+          transition: background 0.2s ease-in-out;
+        }
+      }
+
+      .menuButton_active {
+        box-shadow: 0px 0px 200px 200px #ff2da020;
+        background: linear-gradient(to left, $gd_1_1, $gd_1_2);
+        border-color: transparent;
+
+        .HeaderSection_Book_Menu_el {
+          background-color: $black;
+        }
+        .HeaderSection_Book_Menu_1 {
+          transform: translate(0%, 230%) rotate(45deg);
+        }
+        .HeaderSection_Book_Menu_2 {
+          scale: 0;
+        }
+        .HeaderSection_Book_Menu_3 {
+          transform: translate(0%, -230%) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .HeaderSectionWrap_MobileMenu {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient($bg_gd_2_1, $bg_gd_2_2);
+    transform: translateY(-100vmax);
+
+    transform-origin: center center;
+    animation: slide_out 0.3s linear;
+
+    @keyframes slide_out {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+        display: flex;
+      }
+
+      100% {
+        transform: translateY(-100vmax);
+        opacity: 0;
+        display: none;
+      }
+    }
+
+    .HeaderSectionWrap_MobileMenu_Navigation {
+      padding: 0px $global_horozontal_padding_758;
+      display: flex;
+      flex-direction: column;
+      margin-top: 130px;
+      gap: 12px;
+
+      .HeaderSectionWrap_MobileMenu_Navigation_El {
+        font-size: 46px;
+        font-weight: 700;
+        text-decoration: none;
+        color: $white;
+        transition: color 0.3s ease-in-out;
+      }
+    }
+
+    .HeaderSectionWrap_MobileMenu_Socioals {
+      padding: 0px $global_horozontal_padding_758;
+      .HeaderSectionWrap_MobileMenu_Socioals_Text {
+        margin-top: 40px;
+
+        color: $grey_1;
+        font-size: 14px;
+      }
+
+      .HeaderSectionWrap_MobileMenu_Socioals_Text_Buttons {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        .HeaderSectionWrap_MobileMenu_Socioals_Text_Buttons_El {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 48px;
+          width: 48px;
+          background-color: #ffffff0d;
+        }
+      }
+    }
+
+    .HeaderSectionWrap_MobileMenu_Driver {
+      background-color: #1a1628;
+      height: 8px;
+    }
+  }
+
+  .menu_start{
+    display: none;
+  }
+
+  .menu_active {
+    display: flex;
+    transform: translateY(0);
+    transform-origin: center center;
+    animation: slide 0.3s linear;
+
+    @keyframes slide {
+      0% {
+        transform: translateY(-100vmax);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .HeaderSectionWrap_MobileMenu_DarkerBack {
+    position: absolute;
+    z-index: -100;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(4, 7, 14, 0.75);
+
+    display: none;
+  }
+
+  .menuBack_active {
+    display: flex;
+
+    animation: back 0.3s linear;
+
+    @keyframes back {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// responce part
+@media screen and (max-width: 1440px) {
+  .HeaderSectionWrap {
+    .HeaderSection {
+      margin: 20px $global_horozontal_padding_1440;
+    }
+  }
+}
+@media screen and (max-width: 1080px) {
+  .HeaderSectionWrap {
+    .HeaderSection {
+      .HeaderSection_Logo {
+        width: 135px;
+      }
+
+      .HeaderSection_Navigation {
+        gap: 32px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 758px) {
+  .HeaderSectionWrap {
+    .HeaderSection {
+      margin: 20px $global_horozontal_padding_758;
+
+      .HeaderSection_Logo {
+        width: 160px;
+      }
+
+      .HeaderSection_Navigation {
+        display: none;
+      }
+
+      .HeaderSection_Book {
+        .HeaderSection_Book_Menu {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .HeaderSectionWrap {
+    .HeaderSection {
+      margin: 20px $global_horozontal_padding_758;
+
+      .HeaderSection_Logo {
+        width: 130px;
+      }
+
+      .HeaderSection_Navigation {
+        display: none;
+      }
+
+      .HeaderSection_Book {
+        .HeaderSection_Book_Menu {
+          display: flex;
+          width: 38px;
+          height: 38px;
+        }
+      }
+    }
+
+    .HeaderSectionWrap_MobileMenu {
+      .HeaderSectionWrap_MobileMenu_Navigation {
+        .HeaderSectionWrap_MobileMenu_Navigation_El {
+          font-size: 35px;
+        }
+      }
+
+      .HeaderSectionWrap_MobileMenu_Socioals {
+        .HeaderSectionWrap_MobileMenu_Socioals_Text {
+        }
+
+        .HeaderSectionWrap_MobileMenu_Socioals_Text_Buttons {
+          .HeaderSectionWrap_MobileMenu_Socioals_Text_Buttons_El {
+          }
+        }
+      }
+
+      .HeaderSectionWrap_MobileMenu_Driver {
+      }
+    }
+  }
+}

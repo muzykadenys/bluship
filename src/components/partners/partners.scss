@@ -1,0 +1,296 @@
+@import "../../settings/settings.scss";
+
+.PartnersSection_Wrap {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.PartnersSection {
+  margin: 200px 0px -20px 0px;
+  width: 100%;
+  max-width: $max_width;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .PartnersSection_Text {
+    width: 400px;
+    font-size: 24px;
+    font-weight: 600;
+
+    span {
+      background: -webkit-linear-gradient(360deg, $gd_2_1, $gd_2_2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .PartnersSection_Bricks {
+    width: 100%;
+    margin-top: 42px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+
+    .PartnersSection_Bricks_Wrap {
+      display: flex;
+      gap: 4px;
+      
+      .PartnersSection_Bricks_Wrap_El {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        padding: 12px 42px;
+        margin-right: 30px;
+
+        background: #ef3cbc17;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(5px);
+
+        transition: background 0.4s ease-in-out;
+
+        img {
+          transition: scale 0.3s ease-in-out;
+        }
+
+        &:hover {
+          background: #ef3cbc2a;
+          img {
+            scale: 0.9;
+          }
+        }
+      }
+    }
+    .PartnersSection_Bricks_El {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      padding: 12px 42px;
+
+      background: #ef3cbc17;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(5px);
+
+      transition: background 0.4s ease-in-out;
+
+      img {
+        transition: scale 0.3s ease-in-out;
+      }
+
+      &:hover {
+        background: #ef3cbc2a;
+        img {
+          scale: 0.9;
+        }
+      }
+    }
+  }
+
+  .PartnersSection_Phrase {
+    width: fit-content;
+    padding: 210px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+    font-size: 70px;
+    font-weight: 700;
+
+    .PartnersSection_Phrase_Line1 {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .PartnersSection_Phrase_Line2 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .PartnersSection_Phrase_Line3 {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+
+      .PartnersSection_Phrase_Line3_Bluship {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 15px;
+
+        .PartnersSection_Phrase_Line3_Bluship_text {
+          background: -webkit-linear-gradient(
+            180deg,
+            $gd_0_1,
+            $gd_0_2,
+            $gd_0_3
+          );
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      .PartnersSection_Phrase_Line3_Bluship:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to left, #ff2da0, #7063ff, #16baff);
+        clip-path: polygon(
+          0 0,
+          calc(100% - 20px) 0,
+          100% 20px,
+          100% 100%,
+          20px 100%,
+          0 calc(100% - 20px),
+          0 0,
+          4px 4px,
+          4px calc(100% - 20px - 1.66px),
+          calc(20px + 1.66px) calc(100% - 4px),
+          calc(100% - 4px) calc(100% - 4px),
+          calc(100% - 4px) calc(20px + 1.66px),
+          calc(100% - 20px - 1.66px) 4px,
+          4px 4px
+        );
+      }
+    }
+  }
+}
+
+// responce part
+@media screen and (max-width: 1440px) {
+  .PartnersSection {
+    margin: 100px $global_horozontal_padding_1440 -20px $global_horozontal_padding_1440;
+
+    .PartnersSection_Bricks {
+      .PartnersSection_Bricks_El {
+        padding: 12px 20px;
+      }
+    }
+    .PartnersSection_Phrase {
+      font-size: 65px;
+    }
+  }
+}
+@media screen and (max-width: 1380px) {
+  .PartnersSection {
+    .PartnersSection_Bricks {
+      // scale: 0.9;
+
+      .PartnersSection_Bricks_El {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 10px;
+      }
+    }
+    .PartnersSection_Phrase {
+      font-size: 51px;
+    }
+  }
+}
+@media screen and (max-width: 1080px) {
+  .PartnersSection_Wrap {
+    margin-top: 550px;
+  }
+  .PartnersSection {
+    margin: 100px 0px -20px 0px;
+
+    .PartnersSection_Text {
+      width: 100%;
+      text-align: center;
+    }
+
+    .PartnersSection_Bricks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .PartnersSection_Bricks_RunningLine {
+        display: flex;
+        width: 100vw;
+      }
+      .PartnersSection_Bricks_El {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 32px;
+        clip-path: inset(0% 0% round 20px);
+
+        scale: 0.9;
+      }
+    }
+
+    .PartnersSection_Phrase {
+      width: 70%;
+      // padding: 100px 0px;
+      padding-top: 100px;
+      padding-bottom: 20px;
+
+      .PartnersSection_Phrase_Line1 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .PartnersSection_Phrase_Line2 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .PartnersSection_Phrase_Line3 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media screen and (max-width: 758px) {
+  .PartnersSection_Wrap {
+    margin-top: 450px;
+
+    .PartnersSection {
+      .PartnersSection_Bricks {
+        margin-top: 25px;
+      }
+
+      .PartnersSection_Phrase {
+        padding-left: 18px;
+        padding-right: 18px;
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .PartnersSection_Wrap {
+    margin-top: 300px;
+
+    .PartnersSection {
+      .PartnersSection_Phrase {
+        width: 96%;
+      }
+      .PartnersSection_Text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .PartnersSection_Wrap {
+    margin-top: 200px;
+
+    .PartnersSection {
+      .PartnersSection_Phrase {
+        font-size: 36px;
+      }
+    }
+  }
+}

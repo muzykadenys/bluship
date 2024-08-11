@@ -1,0 +1,18 @@
+@import '../../settings/settings.scss';
+
+.BgElips {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+
+  .BgElips_Elips {
+    width: 0px;
+    height: 30%;
+    border-radius: 333px;
+    box-shadow: -30px 0px 300px 200px $elips;
+  }
+}

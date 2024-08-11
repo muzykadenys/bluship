@@ -1,0 +1,297 @@
+@import '../../settings/settings.scss';
+
+$right: 55%;
+$left: 27%;
+
+.FooterSection {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0px;
+  background: linear-gradient(180deg, $bg_gd_2_1, $bg_gd_2_2);
+
+  .FooterSection_Wrapp {
+    max-width: $max_width;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+
+    .FooterSectio_Left {
+      width: $left;
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 20px;
+
+      .FooterSectio_Left_Logo {
+        .FooterSectio_Left_Logo_Wrapp {
+          width: fit-content;
+          display: flex;
+          transform-origin: center left;
+          scale: 2.1;
+          gap: 7px;
+
+          .FooterSectio_Left_Logo_Icon {
+            margin-top: 3px;
+          }
+        }
+      }
+
+      .FooterSectio_Left_Text {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 500;
+        color: $grey_2;
+        margin-top: 47px;
+      }
+    }
+
+    .FooterSection_Right {
+      width: $right;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .FooterSection_Right_Title {
+        font-size: 21px;
+        font-weight: 600;
+      }
+
+      .FooterSection_Right_Line {
+        margin-top: 22px;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(to right, $gd_1_1, $gd_1_2);
+      }
+
+      .FooterSection_Right_Links {
+        margin-top: 22px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 12px;
+        column-gap: 50px;
+
+        .FooterSection_Right_Links_El {
+          color: $grey_1;
+          font-size: 14px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: color 0.3s ease-in-out;
+
+          &:hover {
+            color: $grey_1_2;
+          }
+        }
+      }
+
+      .FooterSection_Right_Bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px 0px 0px 0px;
+
+        .FooterSection_Right_Bottom_Text {
+          display: flex;
+          align-items: center;
+          height: fit-content;
+          font-size: 14px;
+          font-weight: 600;
+          color: $grey_1;
+          gap: 20px;
+
+          a {
+            text-decoration: none;
+            color: $grey_1;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+              color: $grey_1_2;
+            }
+          }
+
+          .FooterSection_Right_Bottom_Line {
+            width: 0.7px;
+            height: 18px;
+            background-color: $grey_1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.FooterSection_Right_Bottom_Social {
+  text-decoration: none;
+  display: flex;
+  gap: 12px;
+
+  .FooterSection_Right_Bottom_Social_El {
+    padding: 10px 10px 5px 10px;
+    background-color: rgba(255, 255, 255, 0.09);
+    height: fit-content;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    .FooterSection_Right_Bottom_Social_El_Icon {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    &:hover {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .FooterSection {
+    .FooterSection_Wrapp {
+      margin: 0px $global_horozontal_padding_1440 0px
+        $global_horozontal_padding_1440;
+
+      .FooterSectio_Left {
+        width: 30%;
+        margin-top: 20px;
+
+        .FooterSectio_Left_Logo {
+          display: flex;
+          justify-content: space-between;
+          .FooterSectio_Left_Logo_Wrapp {
+            scale: 1.7;
+
+            .FooterSectio_Left_Logo_Icon {
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+
+      .FooterSection_Right {
+        width: 58%;
+
+        .FooterSection_Right_Links {
+          column-gap: 60px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1080px) {
+  .FooterSection {
+    .FooterSection_Wrapp {
+      flex-direction: column;
+
+      .FooterSectio_Left {
+        flex-direction: column;
+        width: 100%;
+
+        .FooterSectio_Left_Logo {
+        
+          .FooterSectio_Left_Logo_Wrapp {
+            scale: 1.2;
+
+            .FooterSectio_Left_Logo_Icon {
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+
+      .FooterSection_Right {
+        margin-top: 30px;
+        flex-direction: column;
+        width: 100%;
+
+        .FooterSectio_Left_Text {
+          font-size: 18px;
+          font-weight: 500;
+          color: $grey_2;
+          margin-top: 60px;
+        }
+
+        .FooterSection_Right_Links {
+          column-gap: 60px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 758px) {
+  .FooterSection {
+    padding-top: 20px;
+    .FooterSection_Wrapp {
+      margin: 0px $global_horozontal_padding_758 0px
+        $global_horozontal_padding_758;
+
+      font-size: 12px;
+      .FooterSectio_Left {
+        flex-direction: column;
+        width: 100%;
+
+        .FooterSectio_Left_Logo {
+          .FooterSectio_Left_Logo_Wrapp {
+            scale: 1;
+          }
+        }
+      }
+
+      .FooterSection_Right {
+        .FooterSection_Right_Links {
+          .FooterSection_Right_Links_El {
+            font-size: 12px;
+
+            &:hover {
+              color: $grey_1_2;
+            }
+          }
+        }
+
+        .FooterSection_Right_Bottom {
+          .FooterSection_Right_Bottom_Text {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .FooterSection {
+    padding-top: 20px;
+    .FooterSection_Wrapp {
+      .FooterSectio_Left {
+        flex-direction: column;
+        width: 100%;
+
+        .FooterSectio_Left_Logo {
+          .FooterSectio_Left_Logo_Wrapp {
+            scale: 0.8;
+          }
+
+          .FooterSection_Right_Bottom_Social {
+            gap: 5px;
+            .FooterSection_Right_Bottom_Social_El {
+              // padding: 6px 6px 3px 6px;
+              scale: 0.8;
+            }
+          }
+        }
+      }
+
+      .FooterSection_Right {
+        .FooterSectio_Left_Text {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .FooterSectio_Left_Text {
+    font-size: 12px;
+  }
+}

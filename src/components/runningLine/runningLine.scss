@@ -1,0 +1,46 @@
+$duration: 60s;
+
+.RunningLineSection {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  // overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+
+  .RunningLineSection_First,
+  .RunningLineSection_Second {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    transform: translate(100%, 0);
+    position: absolute;
+  }
+
+  .RunningLineSection_First {
+    animation-duration: $duration!important;
+    animation: ticker $duration infinite linear forwards;
+
+  }
+
+  .RunningLineSection_Second {
+    animation-duration: $duration!important;
+    animation: ticker $duration infinite linear forwards;
+    animation-delay: -($duration/2);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate(100%, 0);
+  }
+
+  50% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

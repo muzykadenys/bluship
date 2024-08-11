@@ -1,0 +1,98 @@
+:root {
+  --twinkle-duration: 2s;
+}
+
+.stars-wrapper {
+  position: absolute;
+  top: 0;
+  z-index: -120;
+  pointer-events: none;
+  width: 100vw;
+  // height: 550vh;
+  background: linear-gradient(#04020d, #04020d, #04020d); //050116
+  overflow: hidden;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.star {
+  fill: #7e7994;
+
+  &:nth-child(3n) {
+    opacity: 0.8;
+    animation: twinkle var(--twinkle-duration) ease-in-out infinite;
+    animation-delay: calc(var(--twinkle-duration) * -0.33);
+  }
+  &:nth-child(2n) {
+    opacity: 0.8;
+    animation: twinkle var(--twinkle-duration) ease-in-out infinite;
+    animation-delay: calc(var(--twinkle-duration) * -0.1);
+  }
+  &:nth-child(7n) {
+    opacity: 0.6;
+    animation: twinkle var(--twinkle-duration) ease-in-out infinite;
+    animation-delay: calc(var(--twinkle-duration) * -0.56);
+  }
+  &:nth-child(13n) {
+    opacity: 0.4;
+    animation: twinkle var(--twinkle-duration) ease-in-out infinite;
+    animation-delay: calc(var(--twinkle-duration) * -0.7);
+  }
+  &:nth-child(19n) {
+    opacity: 0.2;
+    animation: twinkle var(--twinkle-duration) ease-in-out infinite;
+    animation-delay: calc(var(--twinkle-duration) * -0.22);
+  }
+}
+
+@keyframes twinkle {
+  25% {
+    opacity: 0;
+  }
+}
+
+.extras {
+  z-index: 200;
+  position: fixed;
+}
+
+.comet {
+  transform-origin: center center;
+  animation: comet 10s linear infinite;
+
+  @keyframes comet {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    40% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    60% {
+      transform: translateX(-100vmax);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-100vmax);
+      opacity: 0;
+    }
+  }
+}
+
+.comet-b {
+  animation-delay: -3.3s;
+}
+
+.comet-c {
+  animation-delay: -5s;
+}

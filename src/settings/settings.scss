@@ -1,0 +1,116 @@
+// ClashGrotesk font connection
+@font-face {
+  font-family: ClashGrotesk;
+  src: url('../../public/fonts/ClashGrotesk/ClashGrotesk-Medium.woff2');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: ClashGrotesk;
+  src: url('../../public/fonts/ClashGrotesk/ClashGrotesk-Semibold.woff2');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: ClashGrotesk;
+  src: url('../../public/fonts/ClashGrotesk/ClashGrotesk-Bold.woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+// Satoshi font connection
+// @font-face {
+//   font-family: Satoshi;
+//   src: url('../../public/fonts/Satoshi/Satoshi-BlackItalic.ttf');
+//   font-style: normal;
+//   font-weight: 700;
+// }
+
+// =======================================================
+
+$white: white;
+$black: black;
+
+// $b_1: #0a0313;
+$b_1: #04020d;
+$bl_1: #9ce6ff;
+$bl_2: #a5e7ff;
+
+$elips: #654a9545;
+
+$gd_0_1: #ff2da0;
+$gd_0_2: #7063ff;
+$gd_0_3: #16baff;
+
+$gd_1_1: #9e63ff;
+$gd_1_2: #ff2da0;
+
+$gd_2_1: #16baff;
+$gd_2_2: #8cc8ff;
+
+$bg_gd_1_1: #160716;
+$bg_gd_1_2: #121520;
+
+$bg_gd_2_1: #1e071f;
+$bg_gd_2_2: #0b091c;
+
+$postFoot_gd_1: #140c26;
+$postFoot_gd_2: #251127;
+
+$postFoot_text_gd_1: #271941;
+$postFoot_text_gd_2: #301633;
+
+$secondary: #d6dae3;
+$skyBlue: #a5e7ff;
+
+$grey_0: #8f92a0;
+$grey_1: #7e7994;
+$grey_1_2: #b4abdc;
+$grey_2: #545163;
+$grey_3: #32303f;
+
+// =======================================================
+
+$global_horozontal_padding: 278px;
+$global_horozontal_padding_1440: 40px;
+$global_horozontal_padding_758: 18px;
+
+$max_width: 1364px;
+$head_padding: 100px;
+
+// =======================================================
+
+@mixin gd_rectangle($vertical, $horizontal) {
+  width: fit-content;
+  padding: $vertical $horizontal;
+  font-size: 21px;
+  font-weight: 600;
+  color: $b_1;
+  background: linear-gradient(to left, #ff2da0, #7063ff, #16baff);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+}
+
+// =======================================================
+#root,
+.App,
+body,
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-family: ClashGrotesk;
+  background-color: $b_1;
+}
+// =========================================================

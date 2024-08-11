@@ -1,0 +1,56 @@
+@import '../../settings/settings.scss';
+
+.BottomTextSection {
+  width: 100vw;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, $postFoot_gd_1 0%, $postFoot_gd_2 100%);
+  padding: 24px 0px 32px 0px;
+
+  .BottomTextSection_Image {
+    height: 100%;
+    width: 100%;
+    max-width: $max_width;
+    background-image: url('../../../public/img/bottom_text.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .BottomTextSection {
+    .BottomTextSection_Image {
+      margin: 0px $global_horozontal_padding_1440;
+    }
+  }
+}
+@media screen and (max-width: 758px) {
+  .BottomTextSection {
+    height: 100px;
+
+    .BottomTextSection_Image {
+      margin: 0px $global_horozontal_padding_758;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .BottomTextSection {
+    height: 35px;
+
+    .BottomTextSection_Image {
+      margin: 0px $global_horozontal_padding_758;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .BottomTextSection {
+    height: 15px;
+
+    .BottomTextSection_Image {
+      margin: 0px $global_horozontal_padding_758;
+    }
+  }
+}

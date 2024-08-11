@@ -1,0 +1,476 @@
+@import '../../settings/settings.scss';
+@font-face {
+  font-family: Satoshi;
+  src: url('../../../public/fonts/Satoshi/Satoshi-BlackItalic.woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+$right: 55%;
+$left: 35%;
+
+.SevicesServices_Wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: $head_padding;
+}
+
+.SevicesServices {
+  max-width: $max_width;
+  width: 100%;
+  max-width: 1364px;
+
+  .SevicesServices_Info {
+    color: $white;
+
+    .SevicesServices_Info_Line {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, $gd_1_1, $gd_1_2);
+    }
+
+    .SevicesServices_Info_Main {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 54px;
+
+      .SevicesServices_Info_Main_Pin {
+        width: $left;
+
+        .SevicesServices_Info_Main_Pin_Button {
+          @include gd_rectangle(10px, 25px);
+        }
+      }
+
+      .SevicesServices_Info_Main_Text {
+        width: $right;
+        .SevicesServices_Info_Main_Text_Big {
+          font-size: 48px;
+          font-weight: 600;
+        }
+
+        .SevicesServices_Info_Main_Text_Small {
+          margin-top: 24px;
+          font-size: 18px;
+          font-weight: 500;
+
+          .SevicesServices_Info_Main_Text_Small_2 {
+            margin-top: 28px;
+
+            span {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .SevicesServices_MainWrap {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+
+    .SevicesServices_MainWrap_Left {
+      background: url('../../../public/img/drone.png');
+      background-repeat: no-repeat;
+      padding: 30px;
+      width: $left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: $skyBlue;
+      text-align: center;
+
+      .SevicesServices_MainWrap_Left_Title {
+        display: flex;
+        align-items: flex-end;
+        height: 20%;
+        font-size: 38px;
+        font-weight: 600;
+      }
+
+      .SevicesServices_MainWrap_Left_Content {
+        height: 50%;
+        margin-top: 12px;
+        width: 80%;
+
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+
+    .SevicesServices_MainWrap_Right {
+      width: $right;
+
+      .SevicesServices_MainWrap_Right_Top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(to right, $gd_1_1, $gd_1_2);
+        height: 50px;
+        width: 100%;
+
+        .SevicesServices_MainWrap_Right_Top_Text {
+          font-size: 18px;
+          font-weight: 500;
+          color: $b_1;
+          margin-left: 28px;
+        }
+
+        .SevicesServices_MainWrap_Right_Top_Signs {
+          display: flex;
+          gap: 12px;
+          margin-right: 28px;
+        }
+      }
+
+      .SevicesServices_MainWrap_Right_Bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: center;
+        gap: 4px;
+        padding: 20px 14px;
+        background: linear-gradient($bg_gd_2_1, $bg_gd_2_2);
+      }
+    }
+  }
+}
+
+.ServiceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 16px;
+  height: 78px;
+  border-radius: 8px;
+  border: 0.1px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+
+  transition: background 0.4s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+
+  .ServiceContainer_Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.052);
+    transition: scale 0.2s ease-in-out;
+  }
+
+  .ServiceContainer_Title {
+    margin-left: 12px;
+    width: 60%;
+    color: $grey_0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .ServiceContainer_Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: $white;
+    border-radius: 100px;
+
+    scale: 0;
+    transition: scale 0.25s ease-in-out;
+
+    .ServiceContainer_Button_Arrow {
+      scale: 0.7;
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover {
+    background: linear-gradient(to right, #d6dae318, #d6dae303);
+    border-style: solid;
+    border-width: 0.1px;
+    border-right: none;
+
+    .ServiceContainer_Button {
+      scale: 1;
+    }
+  }
+
+  &:hover {
+    transform-origin: right;
+    transform: scaleX(0.97);
+
+    .ServiceContainer_Icon {
+      scale: 0.9;
+    }
+  }
+}
+
+.PopupServicesSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  position: fixed;
+  background-color: hsla(251, 73%, 3%, 0.432);
+  z-index: 130;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+
+  .PopupServicesSection_Main {
+    clip-path: inset(0% 0% round 0px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    margin: 40px;
+    gap: 50px;
+    height: fit-content;
+    width: 90%;
+    background-image: linear-gradient(180deg, #162755a2 0%, #160c2b00 100%),
+      url('../../../public/img/land_space.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .PopupServicesSection_Main_Close {
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      justify-content: end;
+
+      .PopupServicesSection_Main_Close_Button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border: 2px solid $bl_1;
+        cursor: pointer;
+
+        div {
+          background-color: $bl_1;
+          width: 17px;
+          height: 2px;
+        }
+
+        .PopupServicesSection_Main_Close_Button_Line1 {
+          transform: translate(0%, 10%) rotate(45deg);
+        }
+        .PopupServicesSection_Main_Close_Button_Line2 {
+          transform: translate(0%, -100%) rotate(-45deg);
+        }
+      }
+    }
+
+    .PopupServicesSection_Main_Text {
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      align-items: center;
+
+      .PopupServicesSection_Main_Text_1 {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 80%;
+        align-items: center;
+        color: $bl_2;
+        font-size: 32px;
+        font-weight: 600;
+      }
+      .PopupServicesSection_Main_Text_2 {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 80%;
+        align-items: center;
+        color: $bl_2;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    .PopupServicesSection_Main_Button {
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 214px;
+      height: 46px;
+      background: linear-gradient(90deg, $gd_2_1, $gd_2_2);
+      font-family: Satoshi;
+      font-weight: 700;
+      margin-bottom: 54px;
+      cursor: pointer;
+    }
+
+    .PopupServicesSection_Main_Drone {
+      position: fixed;
+      margin-top: -200px;
+      height: 100%;
+      width: 100%;
+      background-image: url('../../../public/img/drone.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .SevicesServices {
+    margin: 0px $global_horozontal_padding_1440 0px
+      $global_horozontal_padding_1440;
+
+    .SevicesServices_Info {
+      .SevicesServices_Info_Main {
+        .SevicesServices_Info_Main_Text {
+          width: 52%;
+        }
+      }
+    }
+
+    .SevicesServices_MainWrap {
+      .SevicesServices_MainWrap_Left {
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .SevicesServices {
+    margin: 0px $global_horozontal_padding_1440 0px
+      $global_horozontal_padding_1440;
+
+    .SevicesServices_MainWrap {
+      .SevicesServices_MainWrap_Left {
+        display: none;
+      }
+
+      .SevicesServices_MainWrap_Right {
+        width: 100%;
+        .SevicesServices_MainWrap_Right_Bottom {
+          grid-template-columns: repeat(3, 1fr);
+
+          .ServiceContainer_Button {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .ServiceContainer {
+    background: rgba(255, 255, 255, 0.053);
+    align-items: start;
+    flex-direction: column;
+    padding: 8px;
+    height: 120px;
+
+    .ServiceContainer_Title {
+      margin-left: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .SevicesServices {
+    margin: 0px $global_horozontal_padding_758 0px
+      $global_horozontal_padding_758;
+
+    .SevicesServices_Info {
+      .SevicesServices_Info_Main {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 25px;
+
+        .SevicesServices_Info_Main_Pin {
+          width: 100%;
+        }
+
+        .SevicesServices_Info_Main_Text {
+          width: 100%;
+        }
+      }
+    }
+
+    .SevicesServices_MainWrap {
+      .SevicesServices_MainWrap_Right {
+        .SevicesServices_MainWrap_Right_Bottom {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  .PopupServicesSection {
+    .PopupServicesSection_Main {
+      .PopupServicesSection_Main_Drone {
+        margin-top: -15vh;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 516px) {
+  .PopupServicesSection {
+    .PopupServicesSection_Main {
+      .PopupServicesSection_Main_Drone {
+        margin-top: -20vh;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ServiceContainer {
+    background: rgba(255, 255, 255, 0.053);
+    align-items: start;
+    flex-direction: column;
+    padding: 8px;
+    height: 120px;
+
+    .ServiceContainer_Title {
+      margin-left: 0px;
+      font-size: 12px;
+    }
+  }
+
+  .PopupServicesSection {
+    .PopupServicesSection_Main {
+      margin: 0px;
+
+      .PopupServicesSection_Main_Text {
+        .PopupServicesSection_Main_Text_2 {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+
+      .PopupServicesSection_Main_Drone {
+        position: fixed;
+        // margin-top: -200px;
+        margin-top: -24vh;
+        height: 100%;
+        width: 100vw;
+        background-image: url('../../../public/img/drone.png');
+        background-repeat: no-repeat;
+        background-position: 10% 45%;
+      }
+    }
+  }
+}

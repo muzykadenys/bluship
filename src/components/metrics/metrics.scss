@@ -1,0 +1,162 @@
+@import '../../settings/settings.scss';
+
+.MetricsSection_Wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.MetricsSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  max-width: $max_width;
+  margin: 200px 0px 100px 0px;
+  color: $white;
+
+  .MetricsSection_Block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #181a2c;
+    padding: 25px 0px 35px 0px;
+    gap: 14px;
+    height: 50%;
+
+    .MetricsSection_Block_Image {
+      width: 74px;
+      height: 74px;
+    }
+
+    .MetricsSection_Block_Text {
+      .MetricsSection_Block_Text_Big {
+        font-size: 60px;
+        font-weight: 600;
+      }
+
+      .MetricsSection_Block_Text_Small {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .MetricsSection_Block:nth-child(0),
+  .MetricsSection_Block:nth-child(1),
+  .MetricsSection_Block:nth-child(2),
+  .MetricsSection_Block:nth-child(3) {
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .MetricsSection {
+    margin: 100px $global_horozontal_padding_1440;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .MetricsSection {
+    .MetricsSection_Block {
+      .MetricsSection_Block_Text {
+        .MetricsSection_Block_Text_Big {
+          font-size: 50px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1300px) {
+  .MetricsSection {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: -10px;
+
+    .MetricsSection_Block {
+      height: 56%;
+      .MetricsSection_Block_Text {
+        .MetricsSection_Block_Text_Big {
+          font-size: 60px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .MetricsSection_Block:nth-child(0),
+    .MetricsSection_Block:nth-child(1),
+    .MetricsSection_Block:nth-child(2),
+    .MetricsSection_Block:nth-child(3) {
+      border-right: 2px solid #181a2c;
+    }
+
+    .MetricsSection_Block:nth-child(1),
+    .MetricsSection_Block:nth-child(2) {
+      border-bottom: none;
+    }
+    .MetricsSection_Block:nth-child(1),
+    .MetricsSection_Block:nth-child(3) {
+      border-right: none;
+    }
+  }
+}
+@media screen and (max-width: 758px) {
+  .MetricsSection {
+    margin: 100px $global_horozontal_padding_758;
+
+    .MetricsSection_Block {
+      height: 60%;
+      display: flex;
+      align-items: center;
+
+      .MetricsSection_Block_Text {
+        .MetricsSection_Block_Text_Big {
+          font-size: 42px;
+          font-weight: 600;
+        }
+      }
+
+      .MetricsSection_Block_Image {
+        width: 68px;
+        height: 68px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 758px) {
+  .MetricsSection {
+    margin: 100px $global_horozontal_padding_758;
+    margin-bottom: 0px;
+
+    .MetricsSection_Block {
+      // padding: 20px 10px 20px 10px;
+      height: 70%;
+      flex-direction: column;
+      align-items: start;
+
+      .MetricsSection_Block_Image {
+        margin-left: 10px;
+      }
+      .MetricsSection_Block_Text {
+        margin-left: 10px;
+      }
+    }
+
+    .MetricsSection_Block:nth-child(1),
+    .MetricsSection_Block:nth-child(2) {
+      margin-top: 35px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .MetricsSection {
+    .MetricsSection_Block {
+      // padding: 20px 10px 20px 10px;
+    }
+
+    .MetricsSection_Block:nth-child(1),
+    .MetricsSection_Block:nth-child(2) {
+      // margin-top: 35px;
+    }
+  }
+}
