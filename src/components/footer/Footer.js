@@ -1,52 +1,55 @@
-import React, { useContext, useState } from 'react'
-import '../footer/footer.scss'
-import { ReactComponent as Logo } from '../../svg/logo/logo.svg'
-import { ReactComponent as LogoName } from '../../svg/logo/logo_name.svg'
-import { ReactComponent as LinkedIn } from '../../svg/icons/LinkedIn.svg'
-import { ReactComponent as Twitter } from '../../svg/icons/Twitter.svg'
-import { ReactComponent as Mail } from '../../svg/icons/Mail.svg'
-import { Context } from '../../App'
+import React, { useContext, useState } from "react";
+import "../footer/footer.scss";
+import { ReactComponent as Logo } from "../../svg/logo/logo.svg";
+import { ReactComponent as LogoName } from "../../svg/logo/logo_name.svg";
+import { ReactComponent as LinkedIn } from "../../svg/icons/LinkedIn.svg";
+import { ReactComponent as Twitter } from "../../svg/icons/Twitter.svg";
+import { ReactComponent as Mail } from "../../svg/icons/Mail.svg";
+import { Context } from "../../App";
 
 const footerData = [
-  { name: 'GRAPHIC DESIGN & DIGITAL ILLUSTRATION', link: '#' },
-  { name: 'INFLUENCER CAMPAIGNS', link: '#' },
-  { name: 'COLLABORATIONS & ACQUISITION MARKETING', link: '#' },
-  { name: 'ALPHA CALLS', link: '#' },
-  { name: 'PPC MARKETING', link: '#' },
-  { name: 'STRATEGY & ADVISORY', link: '#' },
-  { name: 'DISCORD GROWTH', link: '#' },
-  { name: 'INFLUENCER CAMPAIGNS', link: '#' },
-  { name: 'TWITTER SPACE PACKAGES & HOSTING', link: '#' },
-  { name: 'DEVELOPMENT', link: '#' },
-  { name: 'GRAPHIC DESIGN & DIGITAL ILLUSTRATION', link: '#' },
-  { name: 'B2B CAMPAIGNS', link: '#' },
-]
+  { name: "GRAPHIC DESIGN & DIGITAL ILLUSTRATION", link: "#" },
+  { name: "INFLUENCER CAMPAIGNS", link: "#" },
+  { name: "COLLABORATIONS & ACQUISITION MARKETING", link: "#" },
+  { name: "ALPHA CALLS", link: "#" },
+  { name: "PPC MARKETING", link: "#" },
+  { name: "STRATEGY & ADVISORY", link: "#" },
+  { name: "DISCORD GROWTH", link: "#" },
+  { name: "INFLUENCER CAMPAIGNS", link: "#" },
+  { name: "TWITTER SPACE PACKAGES & HOSTING", link: "#" },
+  { name: "DEVELOPMENT", link: "#" },
+  { name: "GRAPHIC DESIGN & DIGITAL ILLUSTRATION", link: "#" },
+  { name: "B2B CAMPAIGNS", link: "#" },
+];
 
 function SocialsBricks() {
   return (
     <div className="FooterSection_Right_Bottom_Social">
       <a
-        href="https://www.linkedin.com/company/bluship/"
+        // href="https://www.linkedin.com/company/bluship/"
+        href="#"
         className="FooterSection_Right_Bottom_Social_El"
       >
         <LinkedIn className="FooterSection_Right_Bottom_Social_El_Icon" />
       </a>
 
       <a
-        href="https://twitter.com/Bluship_Web3"
+        // href="https://twitter.com/Bluship_Web3"
+        href="#"
         className="FooterSection_Right_Bottom_Social_El"
       >
         <Twitter className="FooterSection_Right_Bottom_Social_El_Icon" />
       </a>
 
       <a
-        href="mailto:hello@bluship.io"
+        // href="mailto:hello@bluship.io"
+        href="#"
         className="FooterSection_Right_Bottom_Social_El"
       >
         <Mail className="FooterSection_Right_Bottom_Social_El_Icon" />
       </a>
     </div>
-  )
+  );
 }
 
 function LeftText() {
@@ -65,11 +68,11 @@ function LeftText() {
       that prioritizes creativity and innovation. Your curiosity led you here.
       How far will it take you?
     </div>
-  )
+  );
 }
 
 function Footer() {
-  const screenWidth = useContext(Context).screenWidth
+  const screenWidth = useContext(Context).screenWidth;
 
   return (
     <div className="FooterSection">
@@ -124,7 +127,7 @@ function Footer() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

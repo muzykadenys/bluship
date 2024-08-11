@@ -5,7 +5,7 @@ import classNames from 'classnames'
 
 function BookButton({ small }) {
   const clickBook = () => {
-    document.querySelector('#calendly_open').click()
+    // document.querySelector('#calendly_open').click()
   }
   return (
     <div
